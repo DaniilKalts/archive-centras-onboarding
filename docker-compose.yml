@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  frontend:
+    image: node:18
+    volumes:
+      - ./client:/app
+    working_dir: /app
+    command: sh -c "npm install --legacy-peer-deps && npm install -g npm@9.6.4 && npm run dev"
+    ports:
+      - 8080:8080
